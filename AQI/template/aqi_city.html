@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+
+</style>
+</head>
+<body>
+<h3>AQI CALCULATOR FOR {{name}}</h3>
+<p>DIRECTION :: Enter each pollutant concentration value.Click predict to see results.</p>
+<form action="prediction/{{name}}" method="post">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="formGroupExampleInput">PM10</label>
+    <input type="text" name="pm10" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">PM2</label>
+    <input type="text" name="pm2" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">SO</label>
+    <input type="text" name="so" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">CO</label>
+    <input type="text" name="co" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">NOX</label>
+    <input type="text" name="nox" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">NH3</label>
+    <input type="text" name="nh3" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">O3</label>
+    <input type="text" name="o3" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+  </div>
+  <input type="submit" value="PREDICT">
+</form>
+
+{% if key %}
+AQI {{ key }}
+AQI CATEGORY {{status}}
+{% endif %}
+
+<a href="state_page/{{status}}">Click For Statement</a>
+
+</body>
+</html>

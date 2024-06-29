@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h4>AQI CALCULATOR</h4>
+
+<p>Examining air quality has become one of the most essential activities for the peoples in many industrial and urban areas
+today. The quality of air is adversely affected due to various forms of pollution caused by electricity, transportation, fuel uses etc.
+The deposition of harmful gases is creating a serious problem for the quality of life in smart cities. With this increasing air pollution,
+we need to implement efficient air quality monitoring and prdiction models which collect information about the concentration of
+air pollutants and provide assessment of air pollution in area. Particulate matter contains microscopic solids or liquid droplets that
+are so small that they can be inhaled and cause serious health problems. Of these, particles less than 2.5 micrometres in diameter,
+also known as fine particles or PM2.5, pose the greatest risk to health. Hence, air quality evaluation and prediction has become an
+important research area</p>
+
+<img src="{% static 'AQI_SCALE.png' %}">
+<label >SELECT CITY:</label>
+<form action="city_aqi" method="post">
+    {% csrf_token %}
+<select name="city" id="city">
+  <option value="THRISSUR">THRISSUR</option>
+  <option value="PLAMOOD">PLAMOOD</option>
+  <option value="KARYAVATTOM">KARYAVATTOM</option>
+</select>
+
+
+
+    <input type="submit" value="CONTINUE">
+</form>
+</body>
+</html>
